@@ -1,0 +1,15 @@
+# Move diagonally 6 meters left and 4 meters up.
+# Defeat any enemy you find, then move again.
+
+while True:
+    x = hero.pos.x
+    y = hero.pos.y
+    enemy = hero.findNearestEnemy()
+    if enemy:
+        hero.attack(enemy)
+    else:
+        x = x - 6
+        y = y + 4
+        hero.moveXY(x, y)
+    pass
+    
