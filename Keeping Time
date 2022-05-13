@@ -1,0 +1,21 @@
+# Use your new skill to choose what to do: hero.time
+
+while True:
+    enemy = hero.findNearestEnemy()
+    coin = hero.findNearestItem()
+    # If it's the first 10 seconds, attack.
+    if hero.time < 10:
+        if enemy:
+            enemy = hero.findNearestEnemy()
+            hero.attack(enemy)
+        pass
+    # Else, if it's the first 35 seconds, collect coins.
+    elif hero.time < 35:
+        if coin:
+            hero.moveXY(coin.pos.x, coin.pos.y)
+        pass
+    # After 35 seconds, attack again!
+    else:
+        if enemy:
+            hero.attack(enemy)
+        pass
