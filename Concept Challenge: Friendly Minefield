@@ -1,0 +1,13 @@
+# If an enemy is above you, move 4 meters up.
+# If an enemy is below you, move 4 meters down.
+# If there are no enemies, move 12 metres right.
+
+while True:
+    enemy = hero.findNearestEnemy()
+    if enemy:
+        if enemy.pos.y > hero.pos.y:
+            hero.moveXY(hero.pos.x, hero.pos.y + 4)
+        if enemy.pos.y < hero.pos.y:
+            hero.moveXY(hero.pos.x, hero.pos.y - 4)
+        if enemy != True:
+            hero.moveXY(hero.pos.x + 12, hero.pos.y)
